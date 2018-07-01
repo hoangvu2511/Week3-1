@@ -49,6 +49,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://imgur.com/aw3rTBv.gif' title='Twitter Client' width='' alt='Video Walkthrough' />
 
+Link to watch: https://i.imgur.com/aw3rTBv.gif
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes

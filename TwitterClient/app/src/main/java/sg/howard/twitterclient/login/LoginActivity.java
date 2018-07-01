@@ -43,6 +43,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         setUpView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (TwitterCore.getInstance().getSessionManager().getActiveSession() != null) {
+            saveUserSuccess();
+        }
+    }
+
+
     private void setUpView() {
         loader = findViewById(R.id.loader);
         loginButton = findViewById(R.id.login_button);
@@ -80,10 +89,10 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         super.onActivityResult(requestCode, resultCode, data);
         try {
             final TwitterAuthClient twitterAuthClient = new TwitterAuthClient();
-            if(twitterAuthClient.getRequestCode()==requestCode) {
+            if (twitterAuthClient.getRequestCode() == requestCode) {
                 Boolean twitterLoginWasCanceled = (resultCode == RESULT_CANCELED);
-                if(twitterLoginWasCanceled)
-                    twitterAuthClient.onActivityResult(requestCode, resultCode, data);
+                if (!twitterLoginWasCanceled)
+                    loginButton.onActivityResult(requestCode, resultCode, data);
                 else
                     endAuthorizeInProgress();
             }
@@ -91,6 +100,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             clearTwitter();
         }
     }
+
     private void endAuthorizeInProgress() {
         try {
             final TwitterAuthClient twitterAuthClient = new TwitterAuthClient();
@@ -101,9 +111,10 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             endAuthorize.invoke(authState);
         } catch (NoSuchFieldException | SecurityException | InvocationTargetException |
                 NoSuchMethodException | IllegalAccessException e) {
-            Log.e("TwitterClient","Couldn't end authorize in progress.", e);
+            Log.e("TwitterClient", "Couldn't end authorize in progress.", e);
         }
     }
+
     @Override
     public void setPresenter(LoginContract.Presenter presenter) {
         this.presenter = presenter;

@@ -8,6 +8,8 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.models.Tweet;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import sg.howard.twitterclient.base.BaseView;
 
@@ -41,10 +43,37 @@ public class ComposeTweetPresenter implements ComposeContract.Presenter {
                         mView.showError(exception.getMessage());
                     }
                 });
+
+
+
     }
 
     @Override
+    public void getUser() {
+        TwitterApiClient client = new TwitterApiClient(mSession);
+        client.getStatusesService()
+                .userTimeline(null, "Ginn64733590", null, null, null, null, null, false, false)
+                .enqueue(new Callback<List<Tweet>>() {
+                    @Override
+                    public void success(Result<List<Tweet>> result) {
+                        mView.sendUser(result.data);
+                    }
+
+                    @Override
+                    public void failure(TwitterException exception) {
+
+                    }
+                });
+    }
+
+
+    @Override
     public void start() {
+
+    }
+
+    @Override
+    public void loadMore() {
 
     }
 }

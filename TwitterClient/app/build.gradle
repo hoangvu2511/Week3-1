@@ -27,8 +27,10 @@ android {
     flavorDimensions "mode"
     productFlavors {
         dev {
-            buildConfigField("String", "TOKEN", '"4GBTIPIfqUHqS4Py45x8VLbKM"')
-            buildConfigField("String", "TOKEN_SECRECT", '"zvGokQiR58saNnit4CS5UOGJSZdLJ5J5OILtdsfN8bRRlIex1D"')
+            buildConfigField("String", "TOKEN", '"1011080967199395840-7pSKNJFZgIE5t5973c5mNGTeV5Aq2K"')
+            buildConfigField("String", "TOKEN_SECRECT", '"KgmRBOE74V9DI75c8rlKT3ijW2di5lN8u15daWGE91GYs"')
+            buildConfigField("String", "CONSUMER_KEY", '"4GBTIPIfqUHqS4Py45x8VLbKM"')
+            buildConfigField("String", "CONSUMER_SECRET", '"zvGokQiR58saNnit4CS5UOGJSZdLJ5J5OILtdsfN8bRRlIex1D"')
         }
         prod{
 
@@ -69,4 +71,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha1'
     implementation 'joda-time:joda-time:2.10'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.github.varunest:sparkbutton:1.0.5'
+    implementation 'jp.wasabeef:blurry:2.1.1'
+    implementation 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.6'
+    implementation 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
+
 }

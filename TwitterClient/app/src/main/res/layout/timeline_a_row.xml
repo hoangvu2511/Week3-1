@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:layout_editor_absoluteY="81dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="88dp" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Username"
+        android:textColor="#050505"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScreen_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="/@username"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvUsername"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintDimensionRatio="3:3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:text="Text"
+        android:textColor="#020202"
+        android:textColorLink="#00abfa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvScreen_name" />
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:transitionName="imageShare"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvText"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <com.varunest.sparkbutton.SparkButton
+        android:id="@+id/sparkButtonRetweet"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:sparkbutton_iconSize="25dp"
+        app:sparkbutton_activeImage="@drawable/ic_retweet_active"
+        app:sparkbutton_inActiveImage="@drawable/ic_retweet_vector"
+        app:sparkbutton_primaryColor="@color/colorPrimary"
+         />
+
+    <com.varunest.sparkbutton.SparkButton
+        android:id="@+id/sparkButtonLike"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvRetweet"
+        app:layout_constraintTop_toBottomOf="@+id/imgBackground"
+        app:sparkbutton_activeImage="@drawable/ic_like_red"
+        app:sparkbutton_iconSize="20dp"
+        app:sparkbutton_inActiveImage="@drawable/ic_like_vector"
+        app:sparkbutton_primaryColor="@color/colorPrimary"
+        app:sparkbutton_secondaryColor="@color/colorLike" />
+
+    <TextView
+        android:id="@+id/tvRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="10dp"
+        android:text="456"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sparkButtonRetweet" />
+
+    <TextView
+        android:id="@+id/tvLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="10dp"
+        android:text="1234"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sparkButtonLike" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Time"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/tvScreen_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgShare"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLike"
+        app:srcCompat="@drawable/ic_share" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

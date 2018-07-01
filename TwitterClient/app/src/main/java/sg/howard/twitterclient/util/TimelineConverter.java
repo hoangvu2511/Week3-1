@@ -31,7 +31,7 @@ public final class TimelineConverter {
         return timelineItems;
     }
 
-    private static String dateToAge(String createdAt, DateTime now) {
+    public static String dateToAge(String createdAt, DateTime now) {
         if (createdAt == null) {
             return "";
         }

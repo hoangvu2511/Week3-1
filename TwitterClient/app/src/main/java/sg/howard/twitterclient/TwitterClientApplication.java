@@ -19,7 +19,7 @@ public class TwitterClientApplication extends Application {
         SharedPreferenceHelper.getInstance().setContext(this);
         TwitterConfig config = new TwitterConfig.Builder(this)
                 .logger(new DefaultLogger(Log.DEBUG))
-                .twitterAuthConfig(new TwitterAuthConfig(BuildConfig.TOKEN, BuildConfig.TOKEN_SECRECT))
+                .twitterAuthConfig(new TwitterAuthConfig(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET))
                 .debug(true)
                 .build();
         Twitter.initialize(config);

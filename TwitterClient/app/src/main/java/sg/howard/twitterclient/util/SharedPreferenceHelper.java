@@ -42,7 +42,7 @@ public class SharedPreferenceHelper {
     }
 
     public void saveUserName(String userName){
-        editor().putString("userName", userName!= null ?userName : "").commit();
+        getSharedPreferences().edit().putString("userName", userName!= null ?userName : "").apply();
     }
 
 }

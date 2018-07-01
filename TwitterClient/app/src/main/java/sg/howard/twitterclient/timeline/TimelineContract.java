@@ -10,9 +10,12 @@ import sg.howard.twitterclient.base.BaseView;
 public interface TimelineContract {
     interface View extends BaseView<Presenter>{
         void onGetStatusesSuccess(List<Tweet> data);
+        void onRefresh();
+        void showBlurry();
+        void hideBlurry();
     }
 
     interface Presenter extends BasePresenter{
-
+        void loadItem(int page);
     }
 }

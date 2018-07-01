@@ -21,8 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".compose.ComposeTweetActivity"/>
+        <activity android:name=".compose.ComposeTweetActivity"
+            />
         <activity android:name=".timeline.TimelineActivity"/>
+        <activity android:name=".timeline.ImageActivity"></activity>
     </application>
 
 </manifest>
